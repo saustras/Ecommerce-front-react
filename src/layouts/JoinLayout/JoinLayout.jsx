@@ -4,8 +4,7 @@ import {Icon, Image} from 'semantic-ui-react'
 import { useAuth } from '@/hooks';
 import { useRouter } from 'next/router';
 
-export function JoinLayout(props) {
-  const {children} = props;
+export function JoinLayout({children}) {
   const {user} = useAuth()
   const router = useRouter()
 

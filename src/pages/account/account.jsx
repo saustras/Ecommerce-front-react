@@ -6,11 +6,10 @@ import { useAuth } from "@/hooks";
 import {
   Info,
   Settings,
-  Address,
-  Wishlist,
-  Orders,
-} from "@/components/Account";
-import { Separator, Seo } from "@/components/Shared";
+  AddAddress,
+  ListAddresses
+} from "@/component/acccount";
+import { Separator } from '@/component/Shared'
 import styles from "./account.module.scss";
 
 export default function AccountPage() {
@@ -30,7 +29,7 @@ export default function AccountPage() {
       menuItem: "Mis pedidos",
       render: () => (
         <Tab.Pane attached={false}>
-          <Orders />
+          <p>Pedidos</p>
           <Separator height={80} />
         </Tab.Pane>
       ),
@@ -39,7 +38,7 @@ export default function AccountPage() {
       menuItem: "Lista de deseos",
       render: () => (
         <Tab.Pane attached={false}>
-          <Wishlist />
+            <p>Pedidos</p>
           <Separator height={80} />
         </Tab.Pane>
       ),
@@ -48,8 +47,8 @@ export default function AccountPage() {
       menuItem: "Direcciones",
       render: () => (
         <Tab.Pane attached={false}>
-          <Address.AddAddress onReload={onReload} />
-          <Address.ListAddresses reload={reload} onReload={onReload} />
+          <AddAddress onReload={onReload} />
+          <ListAddresses reload = {reload} onReload={onReload} />
           <Separator height={80} />
         </Tab.Pane>
       ),
@@ -79,16 +78,9 @@ export default function AccountPage() {
 
   return (
     <>
-      <Seo title="Mi cuenta" />
-
       <BasicLayout isContainer relative>
         <Info />
-
-        <Tab
-          menu={{ secondary: true, pointing: true }}
-          panes={panes}
-          className={styles.tabs}
-        />
+        <Tab menu ={{secondary: true, pointing: true}} panes={panes} className={styles.tabs} />
       </BasicLayout>
     </>
   );

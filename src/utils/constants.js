@@ -6,8 +6,10 @@ export const ENV = {
             REGISTER:"user",
             LOGIN:"auth/login",
         },
-        GETUSER:"user",
-        PLATFORM:"platform"
+        USER:"user",
+        PLATFORM:"platform",
+        ADDRESS:"address",
+        GAME:"product"
     },
 
     TOKEN:"token"

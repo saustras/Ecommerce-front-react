@@ -9,8 +9,7 @@ import styles from "./Menu.module.scss";
 
 const platformCtrl = new Platform();
 
-export function Menu(props) {
-  const { isOpenSearch } = props;
+export function Menu({isOpenSearch}) {
   const [platforms, setPlatforms] = useState([])
   const [showSearch, setShowSearch] = useState(isOpenSearch);
   const [searchText, setSearchText] = useState("");

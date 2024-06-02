@@ -1,14 +1,14 @@
 import { ENV, authFetch } from "@/utils";
 
 export class User {
-    async getUser(id) {
+    async getUser(userId) {
         try {
-            const url =`${ENV.API_URL}/${ENV.ENDPOINTS.GETUSER}/ ${id}`
+            const url =`${ENV.API_URL}/${ENV.ENDPOINTS.USER}/ ${userId}`
             const response = await authFetch(url);
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.message);
+                throw new Error(errorData);
               }
 
             const result = await response.json()
@@ -17,6 +17,29 @@ export class User {
         } catch (error) {s
             throw error;
         }
+    }
+
+    async updateUser(userId,data) {
+        try {
+            const url = `${ENV.API_URL}/${ENV.ENDPOINTS.USER}/ ${userId}`;
+            const params = {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            };
+      
+            const response = await authFetch(url, params);
+            
+              if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData);
+              }
+              return await response.json();
+          } catch (error) {
+            throw error;
+          }
     }
 
 }
