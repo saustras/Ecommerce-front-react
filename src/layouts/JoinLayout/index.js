@@ -1,1 +1,1 @@
-export {default as JoinLayout } from './JoinLayout';
+export * from './JoinLayout';

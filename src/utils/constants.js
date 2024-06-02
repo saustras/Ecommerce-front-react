@@ -4,9 +4,10 @@ export const ENV = {
     ENDPOINTS: {
         AUTH:{
             REGISTER:"user",
-            LOGIN:"auth/login"
+            LOGIN:"auth/login",
         },
         GETUSER:"user",
+        PLATFORM:"platform"
     },
 
     TOKEN:"token"
