@@ -6,8 +6,6 @@ import Link from 'next/link';
 function SignInPage() {
   return (
     <>
-      <h1 title="Iniciar sesión" />
-
       <JoinLayout>
         <div className={styles.signIn}>
           <h3>Iniciar sesión</h3>
