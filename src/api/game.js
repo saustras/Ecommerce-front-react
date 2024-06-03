@@ -92,9 +92,7 @@ export class Game {
 
   async getGameById(id) {
     try {
-      const populate = `populate[0]=cover&populate[1]=platform`;
-
-      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}/${id}?${populate}`;
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}/${id}`;
       const response = await fetch(url);
       if (!response.ok) {
         const errorData = await response.json();

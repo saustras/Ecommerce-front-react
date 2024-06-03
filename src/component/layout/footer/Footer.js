@@ -23,10 +23,29 @@ export function Footer() {
           </div>
 
           <div className={styles.social}>
-            <Button as="a" href="#" circular color="facebook" icon="facebook" />
-            <Button as="a" href="#" circular color="twitter" icon="twitter" />
-            <Button as="a" href="#" circular color="linkedin" icon="linkedin" />
-            <Button as="a" href="#" circular color="youtube" icon="youtube" />
+            <Button 
+              as="a" 
+              target="_blank" 
+              href="https://www.facebook.com/" 
+              circular color="facebook" 
+              icon="facebook" />
+            <Button 
+              as="a" 
+              target="_blank" 
+              href="https://x.com/home" 
+              circular color="twitter" 
+              icon="twitter" />
+            <Button 
+              as="a" 
+              target="_blank" 
+              href="https://www.linkedin.com/in/federico-rendon-buelvas-b93425161/" 
+              circular color="linkedin" icon="linkedin" />
+            <Button 
+              as="a" 
+              target="_blank" 
+              href="https://www.youtube.com/" 
+              circular color="youtube" 
+              icon="youtube" />
           </div>
         </div>
 

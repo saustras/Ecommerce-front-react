@@ -22,7 +22,7 @@ export async function authFetch(url, params) {
         Authorization: `Bearer ${token}`,
       },
     };
-
+    console.log(paramsWithAuth)
     const response = await fetch(url, paramsWithAuth);
     
     return response

@@ -1,5 +1,6 @@
 import { Container } from "semantic-ui-react";
 import styles from "./Info.module.scss";
+import { DateTime } from "luxon";
 
 export function Info(props) {
   const { game } = props;
@@ -13,7 +14,7 @@ export function Info(props) {
       <div className={styles.more}>
         <ul>
           <li>
-            <span>Fecha de lanzamiento:</span> {game.createdAt}
+            <span>Fecha de lanzamiento:</span> {DateTime.fromISO(game.createdAt, { locale: "es" }).toFormat("DDD") }
           </li>
         </ul>
       </div>

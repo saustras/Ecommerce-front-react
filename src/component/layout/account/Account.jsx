@@ -1,14 +1,14 @@
-import { useAuth } from '@/hooks'
+import { useAuth, useCart } from '@/hooks'
 import { useRouter } from 'next/router'
 import React from 'react'
 import styles from './Account.module.scss'
 import { Button, Icon, Label } from 'semantic-ui-react'
 import classNames from 'classnames'
 
-const total = 5
 
 export function Account() {
     const { user } = useAuth()
+    const { total } = useCart()
     const router = useRouter();
 
     const goToLogin = () => router.push("/join/sign-in")
@@ -23,7 +23,7 @@ export function Account() {
         <div className={styles.account}>
           <Button icon className={styles.cart}>
             <Icon name="cart" onClick={goToCart} />
-            {total > 0 && <Label circular>{total}</Label>}
+            {total > 0 && <Label circular>{`${total}`}</Label>}
           </Button>
     
           <Button icon className={classNames({ [styles.user]: user })}>

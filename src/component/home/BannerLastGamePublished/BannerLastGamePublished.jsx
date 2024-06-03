@@ -47,7 +47,7 @@ export function BannerLastGamePublished() {
 
           <p className={styles.price}>
             <Discount>-{game.discount}%</Discount>
-            <span className={styles.finalPrice}>{price}€</span>
+            <span className={styles.finalPrice}>{price}$</span>
           </p>
         </Container>
       </Link>

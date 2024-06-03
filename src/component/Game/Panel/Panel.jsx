@@ -48,14 +48,14 @@ export function Panel(props) {
               <>
                 <span className={styles.originalPrice}>
                   <Icon name="tag" />
-                  {game.price}€
+                  {game.price}$
                 </span>
 
                 <span className={styles.discount}>-{game.discount}%</span>
               </>
             )}
 
-            <span className={styles.price}>{buyPrice}€</span>
+            <span className={styles.price}>{buyPrice}$</span>
           </div>
 
           <Button primary fluid onClick={addCartWrapper} loading={loading}>

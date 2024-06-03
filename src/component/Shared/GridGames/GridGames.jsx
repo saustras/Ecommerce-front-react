@@ -32,7 +32,7 @@ export function GridGames(props) {
                 game.price,
                 game.discount
               )}
-              €
+              $
             </span>
           </div>
         </Link>

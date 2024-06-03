@@ -57,7 +57,7 @@ export class Cart {
     localStorage.removeItem(ENV.CART);
   }
 
-  async paymentCart(token, products, idUser, address) {
+  async paymentCart(token, products, user, address) {
     try {
       const url = `${ENV.API_URL}/${ENV.ENDPOINTS.PAYMENY_ORDER}`;
       const params = {
@@ -66,12 +66,18 @@ export class Cart {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          token,
+          idPayment: token.id,
           products,
-          idUser,
+          user,
           addressShipping: address,
         }),
       };
+      console.log('datos de pago',[
+        {idPayment:token.id,
+          products,
+          user,
+          addressShipping: address}
+      ])
 
       const response = await authFetch(url, params);
 

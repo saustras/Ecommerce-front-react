@@ -11,6 +11,7 @@ import {
 } from "@/component/acccount";
 import { Separator } from '@/component/Shared'
 import styles from "./account.module.scss";
+import { Orders } from "@/component/acccount/Orders";
 
 export default function AccountPage() {
   const { user, logout } = useAuth();
@@ -29,7 +30,7 @@ export default function AccountPage() {
       menuItem: "Mis pedidos",
       render: () => (
         <Tab.Pane attached={false}>
-          <p>Pedidos</p>
+          <Orders />
           <Separator height={80} />
         </Tab.Pane>
       ),
