@@ -5,7 +5,7 @@ import {Account} from '../account'
 import { Menu } from '../menu'
 
 
-export function TopBar() {
+export function TopBar({isOpenSearch}) {
   return (
     <div className={styles.topBar} >
       <div className={styles.left}>
@@ -15,7 +15,7 @@ export function TopBar() {
       </div  >
 
       <div className={styles.center}>
-       <Menu />
+       <Menu isOpenSearch= {isOpenSearch}  />
       </div>
 
       <div className={styles.right}>

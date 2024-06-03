@@ -10,6 +10,7 @@ import styles from "./Menu.module.scss";
 const platformCtrl = new Platform();
 
 export function Menu({isOpenSearch}) {
+  console.log("llega a menu", isOpenSearch)
   const [platforms, setPlatforms] = useState([])
   const [showSearch, setShowSearch] = useState(isOpenSearch);
   const [searchText, setSearchText] = useState("");

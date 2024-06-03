@@ -34,7 +34,7 @@ export default function AccountPage() {
         </Tab.Pane>
       ),
     },
-    {
+    {/*    {
       menuItem: "Lista de deseos",
       render: () => (
         <Tab.Pane attached={false}>
@@ -42,7 +42,7 @@ export default function AccountPage() {
           <Separator height={80} />
         </Tab.Pane>
       ),
-    },
+    },*/}, 
     {
       menuItem: "Direcciones",
       render: () => (

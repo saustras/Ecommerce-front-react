@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Game } from "@/api";
-import { GridGames } from "@/components/Shared";
+import { GridGames } from "@/component/Shared";
 
 const gameCtrl = new Game();
 

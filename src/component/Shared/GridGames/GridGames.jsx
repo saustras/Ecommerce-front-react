@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { map } from "lodash";
-import { fn } from "@/utils";
-import { Label } from "@/components/Shared";
+import { calcDiscountedPrice } from "@/utils";
+import { Discount  } from "@/component/Shared";
 import styles from "./GridGames.module.scss";
+
 
 export function GridGames(props) {
   const { games } = props;
@@ -12,24 +13,24 @@ export function GridGames(props) {
       {map(games, (game) => (
         <Link
           key={game.id}
-          href={`/${game.attributes.slug}`}
+          href={`/${game.slug}`}
           className={styles.game}
         >
           <div>
-            <img src={game.attributes.cover.data.attributes.url} />
-            {game.attributes.discount > 0 && (
-              <Label.Discount className={styles.discount}>
-                {`-${game.attributes.discount}%`}
-              </Label.Discount>
+            <img src={game.cover.url} />
+            {game.discount > 0 && (
+              <Discount className={styles.discount}>
+                {`-${game.discount}%`}
+              </Discount>
             )}
           </div>
 
           <div>
-            <span>{game.attributes.title}</span>
+            <span>{game.title}</span>
             <span className={styles.price}>
-              {fn.calcDiscountedPrice(
-                game.attributes.price,
-                game.attributes.discount
+              {calcDiscountedPrice(
+                game.price,
+                game.discount
               )}
               €
             </span>

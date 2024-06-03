@@ -9,8 +9,9 @@ export const ENV = {
         USER:"user",
         PLATFORM:"platform",
         ADDRESS:"address",
-        GAME:"product"
+        GAME:"product",
+        
     },
-
+    CART: "cart",
     TOKEN:"token"
 }
