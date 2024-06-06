@@ -16,8 +16,10 @@ function RegisterForm() {
     onSubmit: async (formValue) => {
       try {
         await authCtrl.register(formValue);
+        toast.success('Cuenta registrada correctamente.')
         router.push("/join/sign-in");
       } catch (error) {
+        toast.error('No se pudo registrar la cuenta.')
         console.error(error.message);
       }
     },

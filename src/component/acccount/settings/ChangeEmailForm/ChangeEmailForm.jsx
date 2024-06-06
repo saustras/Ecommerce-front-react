@@ -4,6 +4,7 @@ import { User } from "@/api";
 import { useAuth } from "@/hooks";
 import { initialValues, validationSchema } from "./ChangeEmailForm.form";
 import styles from "./ChangeEmailForm.module.scss";
+import { toast } from "react-toastify";
 
 const userCtrl = new User();
 
@@ -18,6 +19,7 @@ export function ChangeEmailForm() {
       try {
         await userCtrl.updateUser(user.id, { email: formValue.email });
         updateUser("email", formValue.email);
+        toast.success('Email se ha actualizado correctamente.')
         formik.handleReset();
       } catch (error) {
         console.error(error);

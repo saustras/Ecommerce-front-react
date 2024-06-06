@@ -21,8 +21,10 @@ export function LoginForm() {
       try {
         const response = await authCtrl.login(formValue);
         login(response.data.access_token)
+        toast.success('Se ha iniciadao sesion correctamente.')
         router.push("/");
       } catch (error) {
+        toast.error('Credendenciales incorrectas.')
         console.error(error);
       }
     },

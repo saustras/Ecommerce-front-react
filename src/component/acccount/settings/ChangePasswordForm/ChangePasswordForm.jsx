@@ -4,6 +4,7 @@ import { User } from "@/api";
 import { useAuth } from "@/hooks";
 import { initialValues, validationSchema } from "./ChangePasswordForm.form";
 import styles from "./ChangePasswordForm.module.scss";
+import { toast } from "react-toastify";
 
 const userCtrl = new User();
 
@@ -17,6 +18,7 @@ export function ChangePasswordForm() {
     onSubmit: async (formValue) => {
       try {
         await userCtrl.updateUser(user.id, { password: formValue.password });
+        toast.sucess('Se ha actualizado correctamente la contraseña.')
         logout();
       } catch (error) {
         throw error;

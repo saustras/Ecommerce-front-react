@@ -4,6 +4,7 @@ import { User } from "@/api";
 import { useAuth } from "@/hooks";
 import { initialValues, validationSchema } from "./ChangeNameForm.form";
 import styles from "./ChangeNameForm.module.scss";
+import { toast } from "react-toastify";
 
 const userCtrl = new User();
 
@@ -17,6 +18,7 @@ export function ChangeNameForm() {
     onSubmit: async (formValue) => {
       try {
         await userCtrl.updateUser(user.id, formValue);
+        toast.success('Nombre actualizados correctamente.')
       } catch (error) {
         console.error(error);
       }

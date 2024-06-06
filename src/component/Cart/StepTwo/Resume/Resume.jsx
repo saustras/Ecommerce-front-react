@@ -7,6 +7,7 @@ import { Cart } from "@/api";
 import { useAuth, useCart } from "@/hooks";
 import { calcDiscountedPrice } from "@/utils";
 import styles from "./Resume.module.scss";
+import { toast } from "react-toastify";
 
 const cartCtrl = new Cart();
 
@@ -56,9 +57,11 @@ export function Resume(props) {
       );
 
       if (response.ok) {
+        toast.success('Se ha realizado la compra.')
         deleteAllItems();
         goToStepEnd();
-      } else {
+      } else {        
+        toast.error('Hubo un error al intentar hacer la compra.')
         console.error("Error al realizar el pedido");
       }
     }

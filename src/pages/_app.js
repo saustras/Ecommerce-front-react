@@ -10,7 +10,18 @@ export default function App({ Component, pageProps }) {
     <AuthProvider>
       <CartProvider>
         <Component {...pageProps} />
-        <ToastContainer />
+        <ToastContainer 
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        theme='dart'
+        pauseOnHover
+      />
       </CartProvider>
     </AuthProvider>
   )

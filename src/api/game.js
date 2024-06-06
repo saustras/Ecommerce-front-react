@@ -3,14 +3,17 @@ import { ENV } from "@/utils";
 export class Game {
   async getLastPublished() {
     try {
-      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}/1`;
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}/13`;
 
       const response = await fetch(url);
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData);
       }
-      return  await response.json();
+      const game = await response.json()
+      console.log("respuesta es",game)
+      return  game;
     } catch (error) {
       throw error;
     }

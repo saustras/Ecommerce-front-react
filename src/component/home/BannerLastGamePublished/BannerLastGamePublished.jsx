@@ -11,12 +11,14 @@ const gameCtrl = new Game();
 
 export function BannerLastGamePublished() {
   const [game, setGame] = useState(null);
+  let response;
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await gameCtrl.getLastPublished();
-        setGame(response.data);
+        response = await gameCtrl.getLastPublished();
+        setGame(response.data)
+        console.log('imagen es walppaer', response)
       } catch (error) {
         console.error(error);
       }
@@ -24,17 +26,18 @@ export function BannerLastGamePublished() {
   }, []);
 
   if (!game) return null;
-
-
+  
   const wallpaper = game.wallpaper;
-  const releaseDate = new Date(game.createdAt).toISOString();
+  const releaseDate = game.createdAt
   const price = calcDiscountedPrice(
     game.price,
     game.discount
   );
+  console.log('este es el juego', game)
 
   return (
     <div className={styles.container}>
+
       <Image src={wallpaper.url} className={styles.wallpaper} />
 
       <Link className={styles.infoContainer} href={game.slug}>

@@ -3,6 +3,7 @@ import { Button, Container, Icon, Image } from "semantic-ui-react";
 import { calcDiscountedPrice} from "@/utils";
 import { useCart } from "@/hooks";
 import styles from "./Panel.module.scss";
+import { toast } from "react-toastify";
 
 export function Panel(props) {
   const { gameId, game } = props;
@@ -16,6 +17,7 @@ export function Panel(props) {
   const addCartWrapper = () => {
     setLoading(true);
     addCart(gameId);
+    toast.success('El juego se ha agregado al carrito.')
 
     setTimeout(() => {
       setLoading(false);
