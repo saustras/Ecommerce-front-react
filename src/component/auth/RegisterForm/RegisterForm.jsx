@@ -3,6 +3,7 @@ import { Form } from 'semantic-ui-react'
 import { Auth } from "@/api";
 import { initialValues, validationSchema } from './RegisterForm.form'
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 const authCtrl = new Auth();
 
@@ -19,7 +20,6 @@ function RegisterForm() {
         toast.success('Cuenta registrada correctamente.')
         router.push("/join/sign-in");
       } catch (error) {
-        toast.error('No se pudo registrar la cuenta.')
         console.error(error.message);
       }
     },

@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const { ENV } = require("@/utils/constants");
 
 export class Auth {
@@ -21,10 +23,11 @@ export class Auth {
 
           if (!response.ok) {
             const errorData = await response.json();
+            toast.error(errorData.message)
             throw new Error(errorData.message);
           }
           return await response.json();
-        } catch (error) {s
+        } catch (error) {
             throw error;
         }
     }
